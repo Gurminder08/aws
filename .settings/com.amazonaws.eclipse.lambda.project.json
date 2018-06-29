@@ -1,0 +1,1 @@
+{"lastDeploymentHandler":"com.example.lambda.demo.SQSLambdaHandler","lastInvokeHandler":null,"handlerMetadata":{"com.example.lambda.demo.SQSLambdaHandler":{"deployment":{"regionId":"ca-central-1","awsLambdaFunctionName":"SQSLambda","awsIamRoleName":"lambdaSQS","awsS3BucketName":"bucketinit","memory":0,"timeout":0},"invoke":null}},"lastInvokedHandlerDeployed":false}
