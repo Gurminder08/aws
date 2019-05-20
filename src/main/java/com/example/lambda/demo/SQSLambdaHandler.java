@@ -22,8 +22,8 @@ import com.amazonaws.services.lambda.model.CreateEventSourceMappingResult;
 
 public class SQSLambdaHandler extends  AbstractAWSLambda implements RequestHandler<Object, String> {
 
-	private static final String awsAccessKeyId = "AKIAITKWWHFUIISM6BMA";
-	private static final String awsSecretAccessKey = "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";
+	private static final String awsAccessKeyId = "********";
+	private static final String awsSecretAccessKey = "*******";
 	private static final String regionName = "ca-central-1";
 	private static AWSCredentials credentials = new BasicAWSCredentials(awsAccessKeyId, awsSecretAccessKey);
 	private static AmazonSQS client = AmazonSQSClientBuilder.standard()
@@ -55,14 +55,14 @@ public class SQSLambdaHandler extends  AbstractAWSLambda implements RequestHandl
 		
 		
 		CreateEventSourceMappingRequest request = new CreateEventSourceMappingRequest();
-		request.setEventSourceArn("https://sqs.ca-central-1.amazonaws.com/002741887385/demoQueue");
+		request.setEventSourceArn("https://sqs.ca-central-1.amazonaws.com/*****/demoQueue");
 		CreateEventSourceMappingResult result = createEventSourceMapping(request);
 		
 		// Receive messages.
 
 		System.out.println("Receiving messages from MyQueue.\n");
 		final ReceiveMessageRequest receiveMessageRequest = new ReceiveMessageRequest(
-				"https://sqs.ca-central-1.amazonaws.com/002741887385/demoQueue");
+				"https://sqs.ca-central-1.amazonaws.com/*****/demoQueue");
 		final List<Message> messages = client.receiveMessage(receiveMessageRequest.withMessageAttributeNames("All"))
 				.getMessages();
 
